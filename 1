@@ -19,7 +19,39 @@ setCount → function to change state
 
 That’s it.
 
+
 -----------------------
+simplest possible thing.
+
+function App() {
+  const [todos, setTodos] = React.useState<string[]>([]);
+
+  return (
+    <>
+      <button onClick={() => setTodos([...todos, "Learn React"])}>
+        Add
+      </button>
+
+      <ul>
+        {todos.map((t, i) => (
+          <li key={i}>{t}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+Understand this fully first:
+
+todos → data
+
+setTodos → changes data
+
+UI re-renders when data changes
+-----------------------
+
+FULL WORKING CONTEXT + REDUCER TODO APP (BEGINNER-CLEAR)
+
 
 import React from "react";
 
